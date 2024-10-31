@@ -2,10 +2,10 @@ import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, Button, Image, ActivityIndicator, Alert, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import { FriendsContext } from '../FriendsContext'; // Импортируйте контекст
+import { FriendsContext } from '../FriendsContext';
 
 export const ProfileScreen = ({ onLogout }) => {
-    const { setFriends } = useContext(FriendsContext); // Получите функцию setFriends из контекста
+    const { setFriends } = useContext(FriendsContext);
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -32,8 +32,8 @@ export const ProfileScreen = ({ onLogout }) => {
         await AsyncStorage.removeItem('api_key');
         await AsyncStorage.removeItem('steam_id');
         setUserData(null);
-        setFriends([]); // Очищаем список друзей при выходе
-        onLogout(); // Вызовите функцию onLogout для обновления состояния авторизации
+        setFriends([]);
+        onLogout();
     };
 
     const getStatusMessage = (state) => {

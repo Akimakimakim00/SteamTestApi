@@ -2,10 +2,10 @@ import React, { useEffect, useContext } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator, Alert, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import { FriendsContext } from '../FriendsContext'; // Импортируйте контекст
+import { FriendsContext } from '../FriendsContext';
 
 export const FriendsList = ({ navigation }) => {
-    const { friends, setFriends } = useContext(FriendsContext); // Получите friends и setFriends из контекста
+    const { friends, setFriends } = useContext(FriendsContext);
     const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export const FriendsList = ({ navigation }) => {
 
                 friendsData.sort((a, b) => b.friend_since - a.friend_since);
 
-                setFriends(friendsData); // Обновляем список друзей в контексте
+                setFriends(friendsData);
             } catch (error) {
                 Alert.alert('Ошибка', 'Не удалось загрузить данные. Пожалуйста, проверьте API Key и Steam ID.');
             } finally {
@@ -33,7 +33,7 @@ export const FriendsList = ({ navigation }) => {
         };
 
         fetchData();
-    }, [navigation, setFriends]); // Добавьте setFriends в зависимости
+    }, [navigation, setFriends]);
 
     const getStatusMessage = (state) => {
         switch (state) {

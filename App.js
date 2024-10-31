@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AuthScreen } from './screens/AuthScreen';
 import { ProfileScreen } from './screens/ProfileScreen';
 import { FriendsList } from "./screens/FriendsList";
-import { FriendsProvider } from './FriendsContext'; // Импортируйте контекст
+import { FriendsProvider } from './FriendsContext';
 
 const Tab = createBottomTabNavigator();
 
