@@ -26,6 +26,7 @@ const App = () => {
                     screenOptions={{
                         tabBarActiveTintColor: '#ff4d4d',
                         tabBarInactiveTintColor: '#666666',
+                        tabBarStyle: { display: isAuthenticated ? 'flex' : 'none' },
                     }}
                 >
                     {!isAuthenticated ? (
