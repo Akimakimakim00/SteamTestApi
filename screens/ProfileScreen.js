@@ -56,7 +56,11 @@ export const ProfileScreen = ({ onLogout }) => {
     };
 
     if (loading) {
-        return <ActivityIndicator size="large" color="#ffffff" />;
+        return (
+            <View style={styles.loadingContainer}>
+                <ActivityIndicator size="large" color="black" />
+            </View>
+        );
     }
 
     return (
@@ -77,6 +81,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     userInfo: {
         alignItems: 'center',
