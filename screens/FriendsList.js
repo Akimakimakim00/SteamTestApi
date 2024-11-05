@@ -54,9 +54,13 @@ export const FriendsList = ({ navigation }) => {
         }
     };
 
-    if (loading) {
-        return <ActivityIndicator size="large" color="#ffffff" />;
-    }
+     if (loading) {
+            return (
+                <View style={styles.loadingContainer}>
+                    <ActivityIndicator size="large" color="black" />
+                </View>
+            );
+        }
 
     return (
         <View style={styles.container}>
@@ -97,6 +101,11 @@ const styles = StyleSheet.create({
         height: 50,
         marginRight: 10,
         borderRadius: 25,
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });
 
